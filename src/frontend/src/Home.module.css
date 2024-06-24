@@ -1,0 +1,304 @@
+/* Home.module.css */
+
+/*make page still by hide the overflow, add two new font and add animation for welcome section,also change
+the location of email address. Change the style of scrollbar and add animation for search bar.I also design the menu
+button both for text inside the menu and open menu button*/
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=Big+Shoulders+Inline+Text&display=swap');
+
+body {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Big Shoulders Inline Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@100;300&display=swap');
+}
+
+@font-face {
+  font-family: 'Amiri', serif;
+  font-weight: 400;
+  src: url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+}
+
+.container {
+  font-family: 'Amiri', serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  justify-content: flex-start;
+  
+  
+}
+
+.header {
+  font-family: 'Amiri', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.welcomeSection {
+  font-family: 'Amiri', serif;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+      animation: 2s linear 0s normal enter;
+  }
+  @media (max-width: 1080px){
+      .txt{
+       font-size: 5px;
+    }
+    }
+  
+  @keyframes enter {
+
+      0% {
+          opacity: 0;
+          transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1500px, 0);
+          animation-timing-function: linear;
+      }
+
+      50% {
+          opacity: .5;
+          transform: scale3d(0.75, 0.75, 0.75) translate3d(0, -60px, 0);
+          animation-timing-function: linear;
+      }
+
+      100% {
+          opacity: 1;
+          transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
+          animation-timing-function: linear;
+      }
+}
+
+.editButton {
+  font-family: 'Amiri', serif;
+  width: 100px;
+  padding: 15px 5px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 17px;
+  margin-top: 15px;
+  align-self: flex-end;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
+.editButton:hover {
+  font-family: 'Amiri', serif;
+  background-color: black;
+  color: white;
+}
+
+.searchBar {
+  font-family: 'Amiri', serif;
+  width: 7%;
+  height: 35px;
+  padding: 0 20px;
+  border: 3px solid #007BFF;
+  border-radius: 17.5px;
+  margin-top: 2.45%;   
+  transition: width 0.3s;
+}
+
+.mapContainer {
+  font-family: 'Amiri', serif;
+  position: relative;
+  height: 60vh;
+  width: 100%;
+}
+
+
+
+.footer {
+  font-family: 'Big Shoulders Inline Text';
+  position: relative; /* 将绝对定位改为相对定位 */
+  color: white;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  right: -20%; /* 使用百分比值来微调右侧距离 */
+  margin-top: 20px; /* 使用 margin 来微调顶部距离 */
+  font-size: 1.5em;
+  top: 5%; 
+}
+
+
+.logoutButton {
+  font-family: 'Amiri', serif;
+  position: absolute;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  top: 50px;
+  right: 50px;
+}
+
+
+.rentInfoContainer {
+  font-family: 'Big Shoulders Inline Text';
+  position: absolute;
+  bottom: 10px; 
+  right: 30px; 
+  width: 50%; 
+  color: white ;
+  background-color: rgba(255, 255, 255, 0); 
+  padding: 20px;
+  overflow-y: auto; 
+  max-height: 15%; 
+  font-size: 1.5em; 
+
+
+scrollbar-width: thin; 
+background-image: white url('./picture.png') ; 
+}
+
+
+.rentInfoContainer::-webkit-scrollbar {
+width: 30px; 
+}
+
+
+.rentInfoContainer::-webkit-scrollbar-thumb {
+  background-color: white;  
+border-radius: 10px; 
+}
+
+
+.rentInfoContainer::-webkit-scrollbar-thumb:hover {
+  background-image: url('./picture.png');
+
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.menuButtonContainer {
+
+}
+
+.menuButton {
+  font-family: 'Amiri', serif;
+  position: absolute;
+  border: none;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  top: -50px;
+  right: -30px;
+  font-size: 26px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.menuButton:hover {
+  background-color: #007BFF; 
+  text-decoration: underline;
+}
+
+.customButton {
+ 
+  background-color: #000000; 
+  color: #fff; 
+  border: none;
+  font-size: 30px;
+  height: 5vh;
+  margin-bottom: 10px;
+  transform: rotate(-15deg);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.customButton:hover {
+  color: #007BFF; 
+}
+
+.expanded {
+  width: 40%;
+}
+
+
+.menuButtonfavo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+      font-weight: bold;
+      font-size: 25px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      left: 5%;
+      transition: background-color 0.3s ease;
+    }
+
+.menuButtonfavo:hover {
+      background-color: red; 
+    }
+
+  .menuButtonfavo2 {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      font-size: 30px;
+      border: none;
+      cursor: pointer;
+      left: 65%;
+      position: absolute;
+
+      transition: background-color 0.3s ease;
+    }
+
+  .menuButtonfavo2:hover {
+      background-color: red; 
+    }
+
+  .menuButtonfavo3 {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      color: black;
+      font-weight: bold;
+      font-size: 35px;
+      left: 58%;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+
+      transition: background-color 0.3s ease;
+    }
+.menuButtonfavo3:hover {
+      background-color: #007BFF; 
+    }
+
